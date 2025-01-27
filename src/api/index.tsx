@@ -1,5 +1,4 @@
 import axios from "axios";
-// const baseURL = "https://api.fios.clients.ucdtrnsfm.com/api/v1/";
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 export const api = axios.create({
 	baseURL,

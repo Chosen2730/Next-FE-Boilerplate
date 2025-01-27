@@ -10,9 +10,8 @@ module.exports = withMT({
 	theme: {
 		extend: {
 			colors: {
-				pry: "#000",
-				sec: "#EF800E",
-				ter: "#00000066",
+				pry: "#4CBB17",
+				sec: "#007B5D",
 				pry_1: "rgba(0, 0, 0, 0.64)",
 				gray_0: "rgba(255, 255, 255, 1)",
 				gray_1: "rgba(250, 250, 250, 1)",
@@ -22,6 +21,8 @@ module.exports = withMT({
 				gray_5: "rgba(91, 91, 91, 1)",
 				red_pry: "#C12121",
 				green_pry: "#21A366",
+				yellow_pry: "#E27E04",
+				blue_pry: "#0A34CD",
 			},
 		},
 	},

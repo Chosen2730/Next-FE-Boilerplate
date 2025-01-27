@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 interface UserProps {
 	email?: string;
 	first_name?: string;
@@ -7,4 +8,17 @@ interface UserProps {
 	role?: string;
 	state?: string | null;
 	user_id?: string;
+}
+
+interface ChatComponentsInterface {
+	isExpanded: boolean;
+	isMobile: boolean;
+}
+
+interface ChatMessagesComponentProps extends ChatComponentsInterface {
+	setIsExpanded: Dispatch<SetStateAction<boolean>>;
+}
+
+interface ChatResponseCompProps extends ChatComponentsInterface {
+	toggleMobileView: () => void;
 }

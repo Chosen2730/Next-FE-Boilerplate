@@ -7,6 +7,7 @@ interface SearchCompProps {
 	setPageIndex?: React.Dispatch<React.SetStateAction<number>>;
 	filterList?: string[];
 	handleFilterChange?: (selectedFilter: string) => void;
+	hideFilter?: boolean;
 }
 
 const SearchComp: React.FC<SearchCompProps> = ({
@@ -15,6 +16,7 @@ const SearchComp: React.FC<SearchCompProps> = ({
 	setPageIndex,
 	filterList,
 	handleFilterChange,
+	hideFilter,
 }) => {
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setSearchTerm(e.target.value);
@@ -33,19 +35,21 @@ const SearchComp: React.FC<SearchCompProps> = ({
 				onChange={handleInputChange}
 				className='rounded-md p-3 border-[1px] pl-12 w-full bg-transparent border-borderLight dark:border-borderDark'
 			/>
-			<select
-				className='p-3 rounded-md bg-transparent border-[1px] border-borderLight dark:border-borderDark capitalize'
-				onChange={(e) => {
-					handleFilterChange && handleFilterChange(e.target.value);
-				}}
-			>
-				<option value=''>All</option>
-				{filterList?.map((item, index) => (
-					<option key={index} value={item}>
-						{item}
-					</option>
-				))}
-			</select>
+			{!hideFilter && (
+				<select
+					className='p-3 rounded-md bg-transparent border-[1px] border-borderLight dark:border-borderDark capitalize'
+					onChange={(e) => {
+						handleFilterChange && handleFilterChange(e.target.value);
+					}}
+				>
+					<option value=''>All</option>
+					{filterList?.map((item, index) => (
+						<option key={index} value={item}>
+							{item}
+						</option>
+					))}
+				</select>
+			)}
 		</div>
 	);
 };
