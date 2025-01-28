@@ -27,7 +27,7 @@ const FormInput = ({
 		<div className='w-full'>
 			{label && (
 				<label
-					style={{ color: (error && colors.red_pry) || color }}
+					style={{ color: (error && colors.red_pry) || color || colors.gray_4 }}
 					className='mb-2 block'
 				>
 					{label}
@@ -55,7 +55,7 @@ const FormInput = ({
 					required={required}
 					name={name}
 					readOnly={readOnly}
-					className={`block p-4 rounded-md w-full border-[1px] ${
+					className={`block p-3 rounded-full w-full border-2 ${
 						error
 							? "border-red_pry"
 							: "dark:border-borderDark border-borderLight"

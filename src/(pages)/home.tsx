@@ -53,14 +53,12 @@ const ChatLayout = () => {
 					/>
 				</div>
 
-				{/* Chat Response Section */}
 				<div
-					className={`
-            ${!showResponseView ? "hidden md:block md:w-0" : "block w-full"}
-            ${isExpanded ? "hidden" : "flex-1"}
-            ${isMobile ? "absolute inset-0" : ""}
-            transition-all duration-300
-          `}
+					className={`${
+						!showResponseView ? "hidden md:block md:w-0" : "block w-full"
+					} ${isExpanded ? "hidden" : "flex-1"} ${
+						isMobile ? "absolute inset-0" : ""
+					} transition-all duration-300`}
 				>
 					<ChatResponseComp
 						isExpanded={isExpanded}
@@ -70,7 +68,6 @@ const ChatLayout = () => {
 				</div>
 			</div>
 
-			{/* Mobile Toggle Button */}
 			{isMobile && !showResponseView && (
 				<button
 					onClick={toggleMobileView}

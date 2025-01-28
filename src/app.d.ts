@@ -22,3 +22,14 @@ interface ChatMessagesComponentProps extends ChatComponentsInterface {
 interface ChatResponseCompProps extends ChatComponentsInterface {
 	toggleMobileView: () => void;
 }
+type AuthStackInterface =
+	| "signup"
+	| "login"
+	| "forgotPassword"
+	| "otp"
+	| "resetPassword"
+	| "resetSuccess";
+
+interface AuthStackSlidesInterface {
+	setStack: Dispatch<SetStateAction<AuthStackInterface>>;
+}
